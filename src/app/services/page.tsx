@@ -1,50 +1,29 @@
-"use client"
-
-import TitlePage from '@/components/TitlePage'
-import TextService from '@/components/TextService'
-import LenisScroll from '@/components/LenisScroll'
-
-const service = [
-  {
-    id:1,
-    p:"Compiling content of standard SEO products/services",
-  },
-  {
-    id:2,
-    p:"Security on top",
-  },
-  {
-    id:3,
-    p:"Analytical analysis as a service",
-  },
-  {
-    id:4,
-    p:"Website Maintenance",
-  },
-  {
-    id:5,
-    p:"Price we can talk",
-  },
-]
+import TitlePage from '@/components/TitlePage';
+import TextService from '@/app/services/TextService';
+import LenisScroll from '@/app/services/LenisScroll';
+import {service} from '../../utils/serviceData';
+import ImageParent from './ImageParent';
+import Paragraph from '@/components/Paragraph';
 
 const Services = () => {
+
   return (
     <LenisScroll>
       <div className='relative'>
         <TitlePage text="Services" />
-        <p className='text-sm font-semibold italic absolute right-0 top-10'>"Serve with passion"</p>
+        <Paragraph cn='italic absolute right-0 top-10'>"Build with passion<br/>Serve with passion"</Paragraph>
         <section className='flex items-start'>
           <div className='w-full py-[50svh]'>
             <ul>
               {service.map((srv) => (
-                <li key={srv?.id}>
-                  <TextService>{srv?.p}</TextService>
+                <li key={`serv_${srv?.id}`}>
+                  <TextService index={srv?.id}>{srv?.p}</TextService>
                 </li>
               ))}
             </ul>
           </div>
           <div className='w-full h-screen sticky top-0 flex items-center justify-center'>
-            <div className='w-[500px] h-[400px] bg-gray-400 rounded-xl' />
+            <ImageParent />
           </div>
         </section>
       </div>
