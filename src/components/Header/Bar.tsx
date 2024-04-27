@@ -1,12 +1,11 @@
 "use client"
 
 import { FaBars,FaTimes } from "react-icons/fa";
-import { AnimatePresence, motion, useCycle } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Menu from "./Menu";
 import { useState } from "react";
 
 const Bar = () => {
-  // const [open,cycleOpen] = useCycle(false,true)
   const [open,setOpen] = useState(false)
   const [disable,setDisable] = useState(false)
 
@@ -25,16 +24,6 @@ const Bar = () => {
 
   return (
     <motion.div className="rounded-md p-2 z-50">
-      {/* {open ? (
-        <motion.button onTap={() => runAndDisabled()} disabled={disable}>
-          <FaTimes size="20" className={`cursor-pointer fixed top-4 right-12 z-50 ${open ? 'text-white' : 'text-softblack'}`} />
-        </motion.button>
-      ) : (
-        <motion.button onTap={() => runAndDisabled()} disabled={disable}>
-          <FaBars size="20" className={`cursor-pointer fixed top-4 right-12 z-50 ${open ? 'text-white' : 'text-softblack'}`} />
-        </motion.button>
-        )
-      } */}
       {open ? (
         <button onClick={() => runAndDisabled()} disabled={disable}>
           <FaTimes size="20" className={`cursor-pointer fixed top-4 right-12 z-50 ${open ? 'text-white' : 'text-softblack'}`} />
