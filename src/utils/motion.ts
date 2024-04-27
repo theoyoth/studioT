@@ -1,13 +1,13 @@
 export const slideUp = {
   hidden:{
-    y:"110%",
+    y:"140%",
   },
   show:{
     y:0,
     transition:{
       type:"tween",
       ease:"easeInOut",
-      duration:0.4,
+      duration:0.6,
       delay:0.5,
     }
   }
@@ -22,7 +22,7 @@ export const opacityAnimation = {
       type:"tween",
       ease:"easeInOut",
       duration:0.4,
-      delay:0.8,
+      delay:1,
     }
   }
 }
