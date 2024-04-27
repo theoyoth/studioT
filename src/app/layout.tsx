@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins,Ubuntu } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/Navbar";
-import AnimatePresences from "@/components/AnimatePresences";
+import Header from "../components/Header";
 
 const poppins = Poppins({ 
   subsets: ["latin"], 
@@ -31,10 +30,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning={true} className={`${poppins.variable} ${ubuntu.variable} font-poppins px-2 md:px-12 bg-softwhite`}>
-        <AnimatePresences>
-          <Navbar />
-          {children}
-        </AnimatePresences>
+        <Header />
+        {children}
       </body>
     </html>
   );
