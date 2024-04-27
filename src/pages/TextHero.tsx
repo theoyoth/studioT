@@ -1,14 +1,10 @@
 "use client"
 
+import { propTypes } from '@/types';
 import { slideUp } from '@/utils/motion';
 import {motion} from 'framer-motion';
 
-type props = {
-  children: React.ReactNode,
-  cn: string,
-}
-
-const TextHero = ({children,cn}:props) => {
+const TextHero = ({children,cn}:propTypes) => {
   return (
     <motion.h1 variants={slideUp} initial="hidden" animate="show" className={`${cn}`}>{children}</motion.h1>
   )

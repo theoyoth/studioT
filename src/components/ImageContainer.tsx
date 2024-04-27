@@ -4,14 +4,13 @@ import {motion} from "framer-motion"
 import { opacityAnimation } from '@/utils/motion';
 import Image from "next/image";
 
-type variantType = {
-  hidden:{},
-  show:{}
-}
 type props = {
   cn:string,
   src:string,
-  variant?:variantType,
+  variant?: {
+    hidden:{},
+    show:{}
+  }
 }
 
 const ImageContainer = ({cn,src,variant=opacityAnimation}:props) => {

@@ -2,13 +2,9 @@
 
 import {motion} from 'framer-motion';
 import { opacityAnimation } from '@/utils/motion';
+import { propTypes } from '@/types';
 
-type props = {
-  children:React.ReactNode
-  cn:string,
-}
-
-const Paragraph = ({children,cn}:props) => {
+const Paragraph = ({children,cn}:propTypes) => {
   return (
     <motion.p variants={opacityAnimation} initial="hidden" animate="show" className={`text-softblack font-semibold ${cn}`}>
       {children}
